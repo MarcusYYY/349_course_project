@@ -16,10 +16,10 @@ def combine_data(data,match_up):
 	new_data = []
 	for row_1 in range(1,len(data)): 
 		new_row = []
-		for row_2 in range(row_1,len(data)):
-			if match_up[row_1][0] == match_up[row_2][2] and data[row_1][2] == data[row_2][2]:
+		for row_2 in range(row_1 + 1,len(data)):
+			if match_up[row_1][0] == match_up[row_2][2] and data[row_1][2] == data[row_2][2] and match_up[row_1][2] == match_up[row_2][0]:
 				new_row.extend(data[row_1][2:])
-				new_row.extend(data[row_2][4:])	
+				new_row.extend(data[row_2][4:])
 		if new_row:
 			new_data.append(new_row)
  	return new_data
